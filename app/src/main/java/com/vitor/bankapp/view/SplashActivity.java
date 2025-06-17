@@ -10,7 +10,6 @@ import androidx.appcompat.app.AppCompatActivity;
 
 import com.vitor.bankapp.R;
 
-
 public class SplashActivity extends AppCompatActivity {
 
     private static final int SPLASH = 3000;
@@ -29,6 +28,5 @@ public class SplashActivity extends AppCompatActivity {
                 finish();
             }
         }, SPLASH);
-
     }
 }

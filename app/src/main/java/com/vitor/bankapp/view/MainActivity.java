@@ -51,7 +51,8 @@ public class MainActivity extends AppCompatActivity {
 
             if (login.confirmLogin(login) == -1) {
                 if (registerDBController.loginRegister(login)) {
-                    Toast.makeText(this, "Login feito", Toast.LENGTH_SHORT).show();
+                    Intent intent = new Intent(MainActivity.this, ThirdActivity.class);
+                    startActivity(intent);
                 } else {
                     Toast.makeText(this, "Usuario inexistente", Toast.LENGTH_SHORT).show();
                 }
