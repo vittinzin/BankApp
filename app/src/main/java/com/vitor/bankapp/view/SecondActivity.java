@@ -22,7 +22,6 @@ public class SecondActivity extends AppCompatActivity {
     Register register;
     RegisterController registerController;
     RegisterDBController rdb;
-
     EditText etName, etPhone, etEmail, etPassword, etConfirm;
     Button registerBtn;
 
@@ -31,11 +30,6 @@ public class SecondActivity extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         EdgeToEdge.enable(this);
         setContentView(R.layout.activity_second);
-        ViewCompat.setOnApplyWindowInsetsListener(findViewById(R.id.main), (v, insets) -> {
-            Insets systemBars = insets.getInsets(WindowInsetsCompat.Type.systemBars());
-            v.setPadding(systemBars.left, systemBars.top, systemBars.right, systemBars.bottom);
-            return insets;
-        });
 
         etName = findViewById(R.id.etName);
         etPhone = findViewById(R.id.etPhone);
@@ -45,12 +39,12 @@ public class SecondActivity extends AppCompatActivity {
 
         registerBtn = findViewById(R.id.registerBtn);
 
-        registerBtn.setOnClickListener(v->{
+        registerBtn.setOnClickListener(v -> {
 
             registerController = new RegisterController();
             rdb = new RegisterDBController(this);
 
-            if (etPassword.getText().toString().equals(etConfirm.getText().toString())){
+            if (etPassword.getText().toString().equals(etConfirm.getText().toString())) {
                 register = new Register(
                         etName.getText().toString(),
                         etPhone.getText().toString(),
@@ -70,9 +64,9 @@ public class SecondActivity extends AppCompatActivity {
                 } else {
                     Toast.makeText(this, "Invalid!", Toast.LENGTH_SHORT).show();
                 }
-                } else {
+            } else {
                 Toast.makeText(this, "Passwords dont match!", Toast.LENGTH_SHORT).show();
-                }
+            }
         });
     }
 }
